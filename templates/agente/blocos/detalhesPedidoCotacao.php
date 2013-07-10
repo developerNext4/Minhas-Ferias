@@ -187,9 +187,103 @@
                      <legend>Propostas Recebidas</legend>
                      <span class="span8">
                          <?php
+                            $nQry = mysql_query ("SELECT * FROM tb_log WHERE CTC_ID = '$CTC_ID' AND USR_ID = '$_SESSION[USR_ID]'");
+                            if (mysql_num_rows($nQry) > 0){
+                               $ComprouLead = 1;
+                            }else{
+                               $ComprouLead = 0;
+                            }
                             // Busco o número de propostas
-                            $ljQry = mysql_query ("SELECT COUNT(*) FROM tb_cotacao_proposta WHERE CTC_ID = '$CTC_ID'");
-                            if (mysql_num_rows($ljQry) > 0){
+                            $ljQry = mysql_query ("SELECT COUNT(*) AS NUMERO FROM tb_cotacao_proposta WHERE CTC_ID = '$CTC_ID'");   
+                            $llQry = mysql_fetch_array ($ljQry);
+                            
+                            if ($llQry['NUMERO'] > 0){
+                                
+                                ?>
+                                <div class="alert"><?php echo ($llQry['NUMERO']); ?> proposta(s) recebida(s)</div>
+                                <?php
+                                // Verifico se usuário comprou lead
+                                if ($ComprouLead == 0){
+                                    ?>
+                                        <div class="alert">Para visualizar os dados das propsotas é necessário comprar o lead</div>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <div class="accordion" id="accordion2">
+                                    <?php
+                                    $i = 1;
+                                    // Busco as propostas
+                                    $qwQry = mysql_query ("SELECT * FROM tb_cotacao_proposta A INNER JOIN tb_usuario B
+                                        ON A.USR_ID = B.USR_ID INNER JOIN tb_cotacao C ON A.CTC_ID = C.CTC_ID WHERE A.CTC_ID = '$CTC_ID'");
+                                    while ($wwQry = mysql_fetch_array ($qwQry)){
+                                         $VALORES = NULL;
+                                         $VALOR = NULL;
+                                         if($wwQry['CTC_AEREO'] == "1"){
+                                             $VALOR += $wwQry['CPP_TOTAL_AEREO'];
+                                             $wwQry['CPP_TOTAL_AEREO'] = number_format ($wwQry['CPP_TOTAL_AEREO'],2,',','.');
+                                             $VALORES = "<p><strong>Valor Aéreo:</strong> R$ $wwQry[CPP_TOTAL_AEREO]";
+                                         }
+                                         if($wwQry['CTC_HOTEL'] == "1"){
+                                            $VALOR += $wwQry['CPP_TOTAL_HOTEL'];
+                                            $wwQry['CPP_TOTAL_HOTEL'] = number_format ($wwQry['CPP_TOTAL_HOTEL'],2,',','.');
+                                            $VALORES .= "<p><strong>Valor Hotel:</strong> R$ $wwQry[CPP_TOTAL_HOTEL]"; 
+                                         }
+                                         if($wwQry['CTC_ALUGUEL'] == "1"){
+                                             $VALOR += $wwQry['CPP_TOTAL_ALUGUEL'];
+                                             $wwQry['CPP_TOTAL_ALUGUEL'] = number_format ($wwQry['CPP_TOTAL_ALUGUEL'],2,',','.');
+                                             $VALORES .= "<p><strong>Valor Aluguel:</strong> R$ $wwQry[CPP_TOTAL_ALUGUEL]";
+                                         }
+                                         if($wwQry['CTC_ATIVIDADE'] == "1"){
+                                             $VALORES .= "";
+                                         }
+                                         $VALOR = "R$ ". number_format ($VALOR,2,',','.');
+                                         
+                                         $qpQry = mysql_query ("SELECT COUNT(*) AS RECEBIDAS FROM tb_avaliacao 
+                                         WHERE AVL_AVALIADO = '$wwQry[USR_ID]'");
+                                         $pqQry = mysql_fetch_array ($qpQry);
+                                         
+                                         $wpQry = mysql_query ("SELECT COUNT(*) AS FECHADOS FROM tb_cotacao_proposta 
+                                         WHERE USR_ID = '$wwQry[USR_ID]' AND CPP_STATUS = '3'");
+                                         $pwQry = mysql_fetch_array ($wpQry);
+                                         
+                                         $epQry = mysql_query ("SELECT AVG(AVL_NOTA) AS MEDIA FROM tb_avaliacao 
+                                         WHERE AVL_AVALIADO = '$wwQry[USR_ID]'");
+                                         $peQry = mysql_fetch_array ($epQry);
+                                         if ($peQry['MEDIA'] == NULL){
+                                                 $peQry['MEDIA'] = 0;
+                                         }
+				
+                                         
+                                    ?>
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo ($i); ?>">
+                                                Proposta <?php echo ($i); ?>
+                                                </a>
+                                            </div>
+                                            <div id="collapse<?php echo ($i); ?>" class="accordion-body collapse">
+                                                <div class="accordion-inner">
+                                                <p><strong>Nome do agente:</strong> <?php echo (utf8_encode ($wwQry['USR_NOME'])); ?></p>
+                                                <p><strong>Data de criação da proposta:</strong> <?php echo ($oUtil->codificadata($wwQry['CPP_DATA'])); ?></p>
+                                                <p><strong>Descrição da oferta:</strong> <?php echo (utf8_encode ($wwQry['CPP_OBSERVACOES'])); ?></p>
+                                                <?php echo ($VALORES); ?>
+                                                <p><strong>Valor Total da Proposta:</strong> <?php echo ($VALOR); ?></p>
+                                                <p><strong>Score total do Agente:</strong> <?php echo (round($peQry['MEDIA'])); ?></p>
+                                                <p><strong>Quantidade de avaliações que o Agente recebeu:</strong> <?php echo ($pqQry['RECEBIDAS']); ?></p>
+                                                <p><strong>Quantidade de Negócios Fechados no site:</strong> <?php echo ($pwQry['FECHADOS']); ?></p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                        $i++;
+                                    }
+                                    ?>
+                                    </div>
+                                    <?php
+                                    
+                                }
+                            }else{
                                 ?>
                                 <div class="alert">Nenhuma proposta recebida</div>
                                 <?php
@@ -847,13 +941,7 @@
 </script>
                       <p align="center"><button class="btn btn-primary btn-large" onclick='fazerProposta();' type="button">Fazer Proposta</button></p>
                       <?php
-                      // Verifico se usuário comprou lead
-                      $nQry = mysql_query ("SELECT * FROM tb_log WHERE CTC_ID = '$CTC_ID' AND USR_ID = '$_SESSION[USR_ID]'");
-                      if (mysql_num_rows($nQry) > 0){
-                          $ComprouLead = 1;
-                      }else{
-                          $ComprouLead = 0;
-                      }
+                      
                       
                       if ($ComprouLead == 0){
                       ?>

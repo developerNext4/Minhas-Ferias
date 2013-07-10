@@ -129,6 +129,7 @@
 		$CPP_TOTAL_ALUGUEL								= str_replace (',','.',$CPP_TOTAL_ALUGUEL);
 		$arrValores["CPP_TOTAL_ALUGUEL"] 				= $CPP_TOTAL_ALUGUEL;
 		$arrValores["CPP_OBSERVACOES"] 					= $CPP_OBSERVACOES;
+                $arrValores["CPP_DATA"]                                         = date ('Y-m-d');
 	// ======================= //
 
 	// Definindo a A��o da Tela //	
