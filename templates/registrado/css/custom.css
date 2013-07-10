@@ -1,0 +1,139 @@
+body{ background-image:url("../images/background/bg_home.jpg"); background-repeat:no-repeat; background-color:#e6dab1;	 background-position:top center;   }
+
+.wrap_admin{ background-image:url("../images/background/bg_admin.png");  background-color:;	 background-position:top center;
+min-height: 400px; background-position: 0px 20px;}
+.wrap_adminBottom{background-image:url("../images/background/bg_bloc_admin_bottom.png"); background-repeat:no-repeat; min-height: 50px;}
+.wrap_adminTop{ background-image:url("../images/background/bg_bloc_admin_top.png"); background-repeat:no-repeat; position: relative; top: 22px; }
+/* Estilo do topo da pagina home*/
+
+.areaLogin .form_Home{ margin-top:20px;}	
+.areaLogin input[type="text"], .areaLogin input[type="password"]{ font-size:12px; color:#0e93cc; font-weight:bold; width:25%;} 
+.titLogin{ font-size:18px;font-family: 'Fjalla One', sans-serif; text-transform: uppercase;  color:#fff; display:inline-block;}
+.check{ font-size:11px; color: #fff; font-weight:bolder; margin-left:100px;} .check input[type="checkbox"]{ margin:2px;}
+.linksTop { color:#fff; font-weight:bold;}  .linksTop a{ color:#FFF; font-size: 12px; text-decoration:underline; font-weight:normal;}
+.socialMedia{ position:relative; margin-top:10px;}
+.socialMedia{color: #FFFFFF; font-size: 16px;  font-weight: bolder;  text-shadow: 1px 0 1px #1575A9; text-transform: uppercase; margin-top:10px;}
+.areaLogin .btn-rky{ margin-top: 2px;}
+
+/* Estilo do topo da pagina home*/
+
+/* Estilo do Menu da pagina admin*/
+.menuAdmin{ position: relative; top: 2px;}
+.menuAdmin .nav-pills{ font-size: 18px; font-weight:normal; font-family: 'Fjalla One',sans-serif;}
+.menuAdmin .nav-pills li a{color: #fff;}
+.menuAdmin .nav > li > a:hover, .nav > li > a:focus{ color: rgb(82, 48, 16);}
+.menuAdmin .nav-pills > li > a{ border-radius: 0 0 0 0; height: 18px;  margin-bottom: 2px;margin-top: 0; padding-bottom: 10px;
+    padding-top: 16px;}
+.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus{  background-image: url("../images/icones/btn_tabhome.png");
+    background-repeat:repeat-x; border: 0 none;  color: #523010 !important;   cursor: pointer;  font-family: 'Fjalla One',sans-serif;
+    font-size: 18px; text-transform: uppercase;}
+
+
+/* Estilo do Rodape da pagina home*/
+.btn-rky{background-color: #2C9303; background-image: linear-gradient(to bottom, #2C9803, #1E6503);  background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);   color: #FFF800;   font-weight: bold;   text-shadow: 1px 1px 0 #1A5E0F;
+    text-transform: uppercase; margin-top:10px;}
+.btn-rky:hover{ background-color: #2B7010; background-image: linear-gradient(to bottom, #2C9803, #1E6503);  background-repeat: repeat-x; color:#fff;}
+/* Box modulo Footer*/
+.footerAdmin{ position: relative; top: 15px;}
+.bg_destfooter{  padding: 4px 12px; display:inline-block; background-color: #2C9303; background-image: linear-gradient(to bottom, #2C9803, #1E6503);  background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);   color: #fff;   font-weight: bold;   text-shadow: 1px 1px 0 #1A5E0F;
+    text-transform: uppercase; margin-top:10px; border-radius: 4px 4px 4px 4px;   margin-left: 111px;}.bg_destfooter a{ color:#FFF800;}	
+.menuFooter{ margin-top: 40px;}
+.menuFooter ul li{ display:inline; margin-right:5px;}
+.menuFooter ul li a{ color:#247A03; text-decoration:underline; font-size: 12px; } 
+.menuFooter ul { list-style:none;}
+.menuFooter span{ color:#523010; font-size:14px; font-weight: bold; display:inline-block; margin:2px auto;}
+.menuFooter ul{ padding:0px; margin:0px;}
+.blocoSocial p{ padding:0px; margin:0px; color:#AB2910;} .blocoSocial .tituloSocial{ font-size:14px; font-weight:bold; color:#523010}
+.boxFacebook, .boxyottube, .boxTwiter{ width:30px; height:32px; display:inline-block; margin:5px 5px auto 5px; cursor:pointer;}
+
+.boxFacebook{ background-image: url("../images/socialmedia/social_media.png") !important;;  background-position: 0px 0px !important;}
+.boxyottube{background-image: url("../images/socialmedia/social_media.png") !important;;  background-position: -72px 0px !important;}
+.boxTwiter{background-image: url("../images/socialmedia/social_media.png") !important;;  background-position: -38px 0px !important;}
+.copyright{ bottom: 10px; color: #523010;  font-size: 12px;  font-weight: bold;  left: 107px;  margin: 0;  padding: 0;   position: relative}
+
+
+/*-----------Estilo dos blocos--------------*/
+.blocpgRsp{ position: relative; margin: 20px auto;}
+
+.contentRight{ background-color: #F5F5F5; border: 1px solid #E3E3E3; border-radius: 4px 4px 4px 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;  margin-top: 16px;
+    min-height: 20px;  padding: 12px 19px;   position: relative;}
+.contentLeft{ position: relative; top: 15px;} 
+
+.boxTable{  padding: 10px; margin: 5px auto;}
+.contentTable{ background-color: #eee;}
+.boxTable h2{ font-size: 18px; color: #523010; }
+
+/*------Pagina do cliente Logado---------*/
+
+.boxLogincliente .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus{ background-color: #B0916F;
+    color: #fff;cursor: pointer;  font-family: 'Fjalla One',sans-serif;  font-size: 18px; text-transform: uppercase;
+}
+
+.boxLogincliente .nav-tabs li{ font-family: 'Fjalla One',sans-serif; font-size: 18px; text-transform: uppercase;  }
+.boxLogincliente .nav-tabs li a{ color: #8C7356;}
+
+
+
+.boxLogincliente h3{ color: #AA1F11; display: inline-block;  font-size: 18px;line-height: 0; padding: 0;}
+.boxLogincliente h2{color: #AA1F11; font-size: 14px; line-height: 15px; margin-top: 10px; padding: 0; } 
+.boxLogincliente .linkOutroDestino a{ color: #188505;  font-weight: bold; font-size: 11px;}
+.boxLogincliente .msgClient{  clear: both; margin: 5px auto;position: relative; width: 355px; height: 90px}
+.boxLogincliente label{color: #523010; font-size: 12px; font-weight: bold;}
+.boxLogincliente .linkOutroDestino{color: #188505; display: inline-block; font-size: 11px; font-weight: bold; margin-right: 40px;}
+.boxLogincliente .linkOutroDestino input[type="checkbox"]{ margin:1px 3px;}
+
+
+
+.boxLogincliente .camp1 input[type="text"]{ width: 170px;}
+
+.boxLogincliente .camp2{ width: 100%; display: table;}
+.boxLogincliente .camp2 .blDat{ display: table-row; width: 60%; float: left;}
+.boxLogincliente .camp2 .blQtd{ display: table-row; width: 30%; float: left;}
+.boxLogincliente .camp2 label{ display: block; }
+
+.boxLogincliente .camp2 .blQtd input[type="text"]{ width: 55px}
+.boxLogincliente .camp2 .blDat #DIA{ width: 70px}
+.boxLogincliente .camp2 .blDat #MES{ width: 70px}
+.boxLogincliente .camp2 .blDat #ANO{width: 85px }
+
+
+.boxLogincliente .selectSpan1 span{ font-size: 10px; color: #523010; font-weight: bold; display: block;}
+.boxLogincliente .selectSpan1{ width: 100%; display: table;  }
+.boxLogincliente .selectSpan1 .coluSpan1{ width: 25%; display: table-row; float: left;}
+.boxLogincliente .selectSpan1 .coluSpan2{ width: 27%;  margin-left: 10px; display: table-row; float: left;}
+.boxLogincliente .selectSpan1 .coluSpan3{ width: 30%; display: table-row; float: left;}
+
+.boxLogincliente .selectSpan1 .coluSpan1 input[type="text"]{ width: 100px;}
+.boxLogincliente .selectSpan1 .coluSpan2 input[type="text"]{ width: 100px;}
+.boxLogincliente .selectSpan1 .coluSpan3 input[type="text"]{ width: 100px;}
+
+
+.boxLogincliente .coluSpan1 .btn_add, .boxLogincliente .coluSpan2 .btn_add, .boxLogincliente .coluSpan3 .btn_add{ text-align: center;}
+.boxLogincliente .coluSpan1 .btn_add a, .boxLogincliente .coluSpan2 .btn_add a, .boxLogincliente .coluSpan3 .btn_add a{background-color: #B0916F; font-weight: bold;
+color: #fff; padding: 0px 2px;}
+
+.boxLogincliente .coluSpan3 .btn_add {margin-right: 32px}
+.boxLogincliente .coluSpan2 .btn_add {margin-right: 32px}
+
+
+
+.clearBt{  display: block !important; }
+.displayDados label{   font-size: 11px;}
+.displayDados{ width: 100%; position: relative;  font-size: 12px;}
+.displayDados .cp1{   float: left; width: 120px; display: block; font-size: 10px;}
+.displayDados .cp2{   float: left; width: 120px; display: block; font-size: 10px;}
+.displayDados .cp3{   float: left; width: 137px; display: block; font-size: 10px;}
+
+.displayDados input[type="text"]{ width: 100px; display: inline-block;}
+
+
+.right { text-align:right; }
+.line {line-height:40px;  }
+.borderTop {border-bottom:1px solid; }
+.divAereo{ background-color: #FFE4E1 }
+.divHotel{ background-color: #F5F5F5 }
+.divAluguel{ background-color:#FFE7BA }
+
+

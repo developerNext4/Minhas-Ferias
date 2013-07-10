@@ -1,0 +1,22 @@
+<div class="contentRight">
+<div class="boxBtnAvaliacao">
+  <button class="btn-rky btn-large btn-block btn-primary" type="button">Escolher Fornecedor</button>
+  <button class="btn btn-large btn-block" type="button">Avaliar Fornecedor</button>
+</div>
+<div class="blocpgRsp">
+  <h4>
+  Comentários perguntas para:
+  <h4>
+  <form>
+    <select class="span4">
+      <option>Todos</option>
+      <option>Agente 1</option>
+      <option>Agente 2</option>
+      <option>Agente 2</option>
+    </select>
+    <textarea class="span4" placeholder="Escreva aqui sua pergunta ou comentário." ></textarea>
+    <button class="btn btn-large" type="button">Enviar pergunta</button>
+  </form>
+</div><!--Botões de Resp Avaliação-->
+
+</div><!--Fecha  contentRight-->

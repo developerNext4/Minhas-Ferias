@@ -1,0 +1,140 @@
+body{ background-image:url("../images/background/bg_home.jpg"); background-repeat:no-repeat; background-color:#e6dab1;	 background-position:top center;   }
+
+/* Estilo do topo da pagina home*/
+
+.areaLogin .form_Home{ margin-top:20px;}	
+.areaLogin input[type="text"], .areaLogin input[type="password"]{ font-size:12px; color:#0e93cc; font-weight:bold; width:25%;} 
+.titLogin{ font-size:18px;font-family: 'Fjalla One', sans-serif; text-transform: uppercase;  color:#fff; display:inline-block;}
+.check{ font-size:11px; color: #fff; font-weight:bolder; margin-left:100px;} .check input[type="checkbox"]{ margin:2px;}
+.linksTop { color:#fff; font-weight:bold;}  .linksTop a{ color:#FFF; font-size: 12px; text-decoration:underline; font-weight:normal;}
+.socialMedia{ position:relative; margin-top:10px;}
+.socialMedia{color: #FFFFFF; font-size: 16px;  font-weight: bolder;  text-shadow: 1px 0 1px #1575A9; text-transform: uppercase; margin-top:10px;}
+.areaLogin .btn-rky{ margin-top: 2px;}
+
+/* Estilo do topo da pagina home*/
+.boxContD{ margin-left: 7%; position: relative;  top: 28px;}
+.footerImage{ background-image: url("../images/background/bg_footer_blocoI.png"); min-height: 10px; background-repeat: no-repeat; background-position: 20px 0; 
+			}
+.boxContHome{  background-image: url("../images/background/bloco_bg_home.png");  background-position: 53px 33px;  background-repeat: no-repeat; background-size:;  min-height: 570px;}
+.boxContHome .logo{ position: relative;  right: px;  top: 20px;}
+.videoHom{ position:relative;} .videoHom h2{ color:#523010; font-size: 18px; margin-top: 0px;  position: relative;  right: ;  text-transform: uppercase;  top: ; 	}
+.chamadHome{ color: #523010; position: relative; right: ; top: ;}
+.chamVideo{ position: relative; right: ; top: 0px;}
+
+
+
+/*Bloco Conteudo busca tabs Home Page*/
+.boxTabs .nav-tabs{ border:0px !important;}
+.boxTabs{ position:relative; left:60px; top:40px;}
+.tabbable .nav-tabs > .active > a{ background: url("../images/icones/btn_tabhome.png");background-repeat: repeat-x; border:0px;
+font-size:20px; color:#c62913;  cursor:pointer; text-transform: uppercase;  font-family: 'Fjalla One', sans-serif;}
+
+
+.boxTabs *{}
+.boxTabs .nav-tabs > li > a:hover{  background-image: url("../images/icones/btn_tabhome.png"); background-repeat:no-repeat; border:0px; 
+  font-size:20px; color:#c62913;  cursor:pointer;  }
+.boxTabs .nav-tabs > li > a{ border-radius: 4px 4px 0 0; border:0px; line-height:30px; text-transform:uppercase;  padding: 15px 8px;}
+.tabbable .nav-tabs li{ font-size:20px;  font-family: 'Fjalla One', sans-serif;}.tabbable .nav-tabs li a{ color:#fff;  }
+
+.boxTabs input[type="text"], .boxTabs form select{  color:#016D9B; }
+ .boxTabs h3{ color:#AA1F11; font-size:18px; padding:0px; display:inline-block; line-height:0px;}.boxTabs h2{ line-height: 15px; margin-top:10px;color:#AA1F11; font-size:14px; padding:0px;}
+.boxTabs label{ font-weight:bold; color:#523010; font-size:12px;} .tipoRdio input[type="radio"]{margin: 5px 13px;}
+.tabFormulario{ position:relative; margin-left: 5px; overflow:hidden;  width: 420px; background-color:#;}
+
+.tabbable .nav{ margin-bottom:5px !important;}
+.tabbable .camp1{ display:block;}
+.tabbable .camp1 label{ display:inline-block;}
+.tabbable .camp2{ display:table; width: 100%;}
+
+.tabbable .camp2 .blDat{ width: 70%; float: left; display: table-row;}
+.tabbable .camp2 .blQtd{ width: 30%; float: right;  display: table-row;}
+.tabbable .camp1 .deViagem, .tabbable .camp1 .paraViagem{ width:175px;}
+.camp2 div label{ display: block;}
+.camp2 div #DIA{ width: 25%;}
+.camp2 div #MES{ width: 25%;}
+.camp2 div #ANO{ width: 35%;}
+
+
+
+
+
+
+
+
+
+.tabbable .camp2 .qtdViagem{ display: inline-block; width:50px; font-size:12px;}
+.selectSpan{ width:91%; height:120px; display:table;}
+.linkOutroDestino{ font-size:11px; color:#188505; font-weight:bold;}
+.linkOutroDestino a{ color: #188505; display: inline-block;  font-size: 11px;  font-weight: bold; margin: auto 16px; text-decoration: underline;}
+.linkOutroDestino input[type="checkbox"]{  margin: auto 8px;  position: relative;  top: -2px;}
+
+.selectSpan1{background-color: #eee;}
+
+.coluSpan1{width:30%; display:table-row; float:left;}
+.coluSpan2{width:30%; display:table-row; float:left;}
+.coluSpan3{width:30%; display:table-row; float:left;} 
+.coluSpan1 span, .coluSpan2 span, .coluSpan3 span{ color: #523010; font-size: 11px; font-weight: bold; display:block;}
+
+.coluSpan1 input[type="text"]{ width: 55%;}
+.coluSpan3 input[type="text"]{ width: 70%; }
+.coluSpan2 input[type="text"]{ width: 82%;}
+
+.coluSpan3{width:33%; display:table-row; float:left;} .coluSpan3 span{  color: #523010; font-size: 11px; font-weight: bold; display:block;}
+
+div .coluSpan1 .select1{ width:105px;  color:#016D9B; font-size:12px;}
+div .coluSpan2 .select2{ width:105px;  color:#016D9B; font-size:12px;  margin-left: 16px; }
+div .coluSpan3 .select3{ width:115px;  color:#016D9B; font-size:12px; }
+.msgTxtHome{ width: 360px; height: 63px; font-size:12px; color: #016D9B; }
+
+.btn_add {  left: 39px;   margin: 5px auto;  position: relative; z-index: 9;}
+.btn_add a{background-color: #6E3010; color: #FFFFFF; font-weight: bold; padding: 0 3px;}
+
+.qtdPropost{ position: relative; top: 5px;}
+.qtdPropost span{ position: relative;color: #523010; display: inline-block; line-height: 1.2; font-size: 11px; font-weight: bold; width:220px;}
+.qtdPropost select{ left: 5px; padding: 2;  position: relative;  width: 142px !important;}
+
+.btn-rky{background-color: #2C9303; background-image: linear-gradient(to bottom, #2C9803, #1E6503);  background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);   color: #FFF800;   font-weight: bold;   text-shadow: 1px 1px 0 #1A5E0F;
+    text-transform: uppercase; margin-top:10px;}
+.btn-rky:hover{ background-color: #2B7010; background-image: linear-gradient(to bottom, #2C9803, #1E6503);  background-repeat: repeat-x; color:#fff;}
+
+
+
+
+
+/* Box modulo Footer*/
+
+.bg_destfooter{  padding: 4px 12px; display:inline-block; background-color: #2C9303; background-image: linear-gradient(to bottom, #2C9803, #1E6503);  background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);   color: #fff;   font-weight: bold;   text-shadow: 1px 1px 0 #1A5E0F;
+    text-transform: uppercase; margin-top:10px; border-radius: 4px 4px 4px 4px;   margin-left: 111px;}.bg_destfooter a{ color:#FFF800;}	
+.footer{ margin-top: 40px;}
+.footer ul li{ display:inline; margin-right:5px;}
+.footer ul li a{ color:#247A03; text-decoration:underline; font-size: 12px; } 
+.footer ul { list-style:none;}
+.menuFooter span{ color:#523010; font-size:14px; font-weight: bold; display:inline-block; margin:2px auto;}
+.menuFooter ul{ padding:0px; margin:0px;}
+.blocoSocial p{ padding:0px; margin:0px; color:#AB2910;} .blocoSocial .tituloSocial{ font-size:14px; font-weight:bold; color:#523010}
+.boxFacebook, .boxyottube, .boxTwiter{ width:30px; height:32px; display:inline-block; margin:5px 5px auto 5px; cursor:pointer;}
+
+.boxFacebook{ background-image: url("../images/socialmedia/social_media.png") !important;;  background-position: 0px 0px !important;}
+.boxyottube{background-image: url("../images/socialmedia/social_media.png") !important;;  background-position: -72px 0px !important;}
+.boxTwiter{background-image: url("../images/socialmedia/social_media.png") !important;;  background-position: -38px 0px !important;}
+.copyright{ bottom: 10px; color: #523010;  font-size: 12px;  font-weight: bold;  left: 107px;  margin: 0;  padding: 0;   position: relative}
+
+/* Estilo do box paginas internas*/
+
+.bloco_paginas{ background-image:url("../images/background/bg_paginas_c.png"); background-repeat:no-repeat;  min-height: 650px; background-position:top center;   }
+.contentCadastro{  background-image:url("../images/background/bg_paginas.png");  left: 3px;   line-height: 52.6px;   margin: 0 auto;   position: relative;   top: 46px;   width: 860px;}
+.left30 { margin-left:30px; }
+.colorRed{ color:#FF0000; font-weight:bold;}
+
+
+
+
+/*----------------------------------------------
+		
+	Blocos Formulário Login cliente		
+		
+-------------------------------------------------*/
+
+

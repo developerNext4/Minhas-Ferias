@@ -1,0 +1,8 @@
+.boxContHome {
+    background-image: url("../images/background/bloco_bg_home.png");
+    background-position: 0px 27px;
+    background-repeat: no-repeat;
+    min-height: 536px;}
+ .boxTabs {   left: 10%;   position: relative;   top: 40px;}   
+.tabbable .tab-content{ overflow: hidden;}
+.boxContD{ margin-left: 15%}
