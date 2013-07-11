@@ -145,6 +145,13 @@
                                                 <h3 id="myModalLabel">Avaliações do Agente</h3>
                                             </div>
                                             <div class="modal-body">
+                                                <?php
+                                                    if (file_exists("logos/$codigo.jpg")){
+                                                ?>
+                                                        <img src="logos/<?php echo ($codigo); ?>.jpg" width='100'>
+                                                <?php
+                                                    }
+                                                ?>
                                                 <p>O agente fechou <strong>
 												<?php
                                                     $hQry = mysql_query ("SELECT COUNT(*) AS FECHADOS 
@@ -236,6 +243,13 @@
                                                 <h3 id="myModalLabel">Avaliações do Agente</h3>
                                             </div>
                                             <div class="modal-body">
+                                                <?php
+                                                    if (file_exists("logos/$codigo.jpg")){
+                                                ?>
+                                                        <img src="logos/<?php echo ($codigo); ?>.jpg" width='100'>
+                                                <?php
+                                                    }
+                                                ?>
                                                 <p>O agente fechou <strong>
 												<?php
                                                     $hQry = mysql_query ("SELECT COUNT(*) AS FECHADOS 

@@ -64,7 +64,7 @@
 			$CTC_ID = ( isset( $_REQUEST['CTC_ID'] ) ) ? $_REQUEST['CTC_ID'] : null;
 			$USUARIO_COTACAO = NULL;
 
-            $hQry = mysql_query ("SELECT * FROM tb_cotacao WHERE CTC_ID = '$CTC_ID'");
+            $hQry = mysql_query ("SELECT * FROM tb_cotacao a INNER JOIN tb_usuario b ON a.USR_ID = b.USR_ID WHERE CTC_ID = '$CTC_ID'");
 			if (mysql_num_rows($hQry) > 0){
 				while ($jQry = mysql_fetch_array ($hQry)){
 					$CTC_STATUS = $jQry['CTC_STATUS'];
@@ -100,6 +100,7 @@
                  </span>
                  <fieldset class="span5">
                      <legend>Informações do Pedido</legend>
+                 <span class="span8"><strong>Criador:</strong> <?php echo (utf8_encode ($jQry['USR_NOME'])); ?></span>
              	 <div class="span3"><strong>Data de Crição:</strong> <?php
 					$DIA = substr ($jQry['CTC_DATA'],8,2);
 					$MES = substr ($jQry['CTC_DATA'],5,2);
@@ -214,26 +215,28 @@
                                     $i = 1;
                                     // Busco as propostas
                                     $qwQry = mysql_query ("SELECT * FROM tb_cotacao_proposta A INNER JOIN tb_usuario B
-                                        ON A.USR_ID = B.USR_ID INNER JOIN tb_cotacao C ON A.CTC_ID = C.CTC_ID WHERE A.CTC_ID = '$CTC_ID'");
+                                        ON A.USR_ID = B.USR_ID WHERE A.CTC_ID = '$CTC_ID'");
                                     while ($wwQry = mysql_fetch_array ($qwQry)){
+                                         $nhQry = mysql_query ("SELECT * FROM tb_cotacao WHERE CTC_ID = '$CTC_ID'");
+                                         $nnQry = mysql_fetch_array ($nhQry);
                                          $VALORES = NULL;
                                          $VALOR = NULL;
-                                         if($wwQry['CTC_AEREO'] == "1"){
+                                         if($nnQry['CTC_AEREO'] == "1"){
                                              $VALOR += $wwQry['CPP_TOTAL_AEREO'];
                                              $wwQry['CPP_TOTAL_AEREO'] = number_format ($wwQry['CPP_TOTAL_AEREO'],2,',','.');
                                              $VALORES = "<p><strong>Valor Aéreo:</strong> R$ $wwQry[CPP_TOTAL_AEREO]";
                                          }
-                                         if($wwQry['CTC_HOTEL'] == "1"){
+                                         if($nnQry['CTC_HOTEL'] == "1"){
                                             $VALOR += $wwQry['CPP_TOTAL_HOTEL'];
                                             $wwQry['CPP_TOTAL_HOTEL'] = number_format ($wwQry['CPP_TOTAL_HOTEL'],2,',','.');
                                             $VALORES .= "<p><strong>Valor Hotel:</strong> R$ $wwQry[CPP_TOTAL_HOTEL]"; 
                                          }
-                                         if($wwQry['CTC_ALUGUEL'] == "1"){
+                                         if($nnQry['CTC_ALUGUEL'] == "1"){
                                              $VALOR += $wwQry['CPP_TOTAL_ALUGUEL'];
                                              $wwQry['CPP_TOTAL_ALUGUEL'] = number_format ($wwQry['CPP_TOTAL_ALUGUEL'],2,',','.');
                                              $VALORES .= "<p><strong>Valor Aluguel:</strong> R$ $wwQry[CPP_TOTAL_ALUGUEL]";
                                          }
-                                         if($wwQry['CTC_ATIVIDADE'] == "1"){
+                                         if($nnQry['CTC_ATIVIDADE'] == "1"){
                                              $VALORES .= "";
                                          }
                                          $VALOR = "R$ ". number_format ($VALOR,2,',','.');
@@ -252,7 +255,8 @@
                                          if ($peQry['MEDIA'] == NULL){
                                                  $peQry['MEDIA'] = 0;
                                          }
-				
+                                         
+                                         $peQry['MEDIA'] = round($peQry['MEDIA']);
                                          
                                     ?>
                                         <div class="accordion-group">
@@ -263,12 +267,21 @@
                                             </div>
                                             <div id="collapse<?php echo ($i); ?>" class="accordion-body collapse">
                                                 <div class="accordion-inner">
+                                                <?php 
+                                                
+                                                    if (file_exists ("logos/$wwQry[USR_ID].jpg")){
+                                                       
+                                                    ?>
+                                                        <p><img src="logos/<?php echo ($wwQry['USR_ID']); ?>.jpg" width="100"></p>
+                                                    <?php
+                                                    }
+                                                ?>
                                                 <p><strong>Nome do agente:</strong> <?php echo (utf8_encode ($wwQry['USR_NOME'])); ?></p>
                                                 <p><strong>Data de criação da proposta:</strong> <?php echo ($oUtil->codificadata($wwQry['CPP_DATA'])); ?></p>
                                                 <p><strong>Descrição da oferta:</strong> <?php echo (utf8_encode ($wwQry['CPP_OBSERVACOES'])); ?></p>
                                                 <?php echo ($VALORES); ?>
                                                 <p><strong>Valor Total da Proposta:</strong> <?php echo ($VALOR); ?></p>
-                                                <p><strong>Score total do Agente:</strong> <?php echo (round($peQry['MEDIA'])); ?></p>
+                                                <p><strong>Score total do Agente:</strong><img src="templates/images/estrelas<?php echo ($peQry['MEDIA']);?>.png"></p>
                                                 <p><strong>Quantidade de avaliações que o Agente recebeu:</strong> <?php echo ($pqQry['RECEBIDAS']); ?></p>
                                                 <p><strong>Quantidade de Negócios Fechados no site:</strong> <?php echo ($pwQry['FECHADOS']); ?></p>
 
